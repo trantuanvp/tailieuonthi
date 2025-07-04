@@ -1,0 +1,2749 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài liệu Luyện Thi THPT</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter for general text, Poppins for headings for a modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Base styles for body and typography */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f9ff; /* Very light blue background for a softer feel */
+            line-height: 1.6;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif; /* Poppins for headings */
+            color: #1a202c; /* Darker text for headings */
+        }
+
+        /* Card styling with enhanced hover effects */
+        .card {
+            background-color: #ffffff;
+            border-radius: 1.5rem; /* More rounded corners for cuter look */
+            box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.08), 0 6px 8px -4px rgba(0, 0, 0, 0.04);
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, border-color 0.4s ease-in-out;
+            border: 1px solid #e0f2fe; /* Lighter blue subtle border */
+            display: flex; /* Flexbox for consistent height */
+            flex-direction: column;
+            justify-content: space-between; /* Distribute space */
+        }
+        .card:hover {
+            transform: translateY(-12px); /* Slightly more pronounced lift */
+            box-shadow: 0 25px 40px -10px rgba(0, 0, 0, 0.15), 0 15px 20px -10px rgba(0, 0, 0, 0.08);
+            border-color: #a78bfa; /* Highlight border on hover */
+        }
+
+        /* Primary button styling with vibrant gradient and hover effects */
+        .btn-primary {
+            background-image: linear-gradient(to right, #a78bfa, #fbcfe8); /* Soft purple to pink gradient */
+            border-radius: 0.75rem; /* Rounded corners */
+            color: white;
+            padding: 0.9rem 2.2rem; /* Slightly larger padding */
+            font-weight: 700; /* Bolder font */
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 5px 10px -2px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            text-transform: uppercase; /* Uppercase text */
+            letter-spacing: 0.05em; /* Slight letter spacing */
+            display: inline-block; /* Ensure padding works */
+            text-align: center; /* Center text */
+        }
+        .btn-primary:hover {
+            background-image: linear-gradient(to right, #8b5cf6, #f472b6); /* Darker gradient on hover */
+            transform: translateY(-4px); /* More pronounced lift on hover */
+            box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Zalo link styling */
+        .zalo-link {
+            color: #1a73e8; /* Google blue for links */
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease-in-out;
+        }
+        .zalo-link:hover {
+            color: #155bb5;
+            text-decoration: underline;
+        }
+
+        /* Hero section styling with background gradient and decorative elements */
+        .hero-section {
+            background: linear-gradient(to bottom right, #a78bfa, #fbcfe8); /* More vibrant gradient */
+            min-height: 600px; /* Taller hero section */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden; /* Hide overflowing dots */
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1); /* Lighter overlay */
+            z-index: 1;
+        }
+        .hero-content {
+            z-index: 10;
+            animation: fadeInScale 1s ease-out forwards; /* Add animation */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle text shadow for depth */
+        }
+        /* Keyframe for hero content animation */
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Decorative dots for hero section with floating animation */
+        .dot {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 10s infinite ease-in-out alternate;
+            z-index: 0;
+        }
+        .dot:nth-child(1) { width: 30px; height: 30px; top: 10%; left: 5%; animation-delay: 0s; }
+        .dot:nth-child(2) { width: 40px; height: 40px; top: 70%; left: 15%; animation-delay: 2s; }
+        .dot:nth-child(3) { width: 25px; height: 25px; top: 20%; right: 10%; animation-delay: 4s; }
+        .dot:nth-child(4) { width: 50px; height: 50px; bottom: 5%; right: 5%; animation-delay: 6s; }
+        .dot:nth-child(5) { width: 35px; height: 35px; top: 40%; left: 30%; animation-delay: 8s; }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        /* Feature icon styling */
+        .feature-icon {
+            color: #a78bfa; /* New primary purple for icons */
+            font-size: 3.5rem; /* Slightly larger icons */
+            margin-bottom: 1.25rem;
+            transition: transform 0.3s ease-in-out; /* Smooth transition for icon hover */
+        }
+        .feature-icon:hover {
+            transform: scale(1.1); /* Slightly enlarge icon on hover */
+        }
+
+        /* Mobile menu styling */
+        .mobile-menu {
+            display: none; /* Hidden by default */
+            position: absolute;
+            top: 100%; /* Position below navbar */
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            flex-direction: column;
+            padding: 1rem 0;
+            animation: slideDown 0.3s ease-out forwards;
+        }
+        .mobile-menu.active {
+            display: flex; /* Show when active */
+        }
+        .mobile-menu a {
+            padding: 0.75rem 1.5rem;
+            color: #333;
+            font-weight: 500;
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        }
+        .mobile-menu a:hover {
+            background-color: #f0f9ff;
+            color: #a78bfa;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Smooth scrolling behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Styles from scientific_info_web */
+        .scientific-info-section {
+            background-color: #f8f9fa; /* Even lighter background */
+            line-height: 1.4; /* Further reduced line height */
+            color: #343a40; /* Slightly darker text for better contrast on light background */
+            padding: 2rem 0; /* Add some padding to the section */
+        }
+
+        .scientific-info-section .header-title {
+            background: linear-gradient(135deg, #3a0b7c 0%, #1546a0 100%); /* Slightly more intense gradient */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5rem; /* Further reduced font size */
+            font-weight: 800;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08); /* Softer, smaller shadow */
+        }
+        .scientific-info-section .year-section-title {
+            background-color: #28a745; /* Bootstrap-like green */
+            color: #ffffff;
+            padding: 1rem; /* Reduced padding */
+            border-radius: 0.7rem; /* Slightly smaller border-radius */
+            margin-top: 2rem; /* Reduced margin-top */
+            margin-bottom: 1.5rem; /* Reduced margin-bottom */
+            font-weight: 800;
+            text-align: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); /* Adjusted shadow */
+            font-size: 1.75rem; /* Further reduced font size */
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            cursor: pointer; /* Indicate clickable */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .scientific-info-section .year-toggle-icon {
+            font-size: 1.2rem;
+            transition: transform 0.2s ease-in-out;
+        }
+        .scientific-info-section .year-content-wrapper {
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            overflow: hidden;
+            max-height: 1000px; /* Arbitrary large value for open state */
+            opacity: 1;
+        }
+        .scientific-info-section .year-content-wrapper.content-hidden {
+            max-height: 0;
+            opacity: 0;
+        }
+
+        .scientific-info-section .section-title {
+            background-color: #e9f5ee; /* Very light green */
+            color: #0a3d22; /* Darker green for readability */
+            padding: 0.8rem; /* Further reduced padding */
+            border-radius: 0.5rem; /* Smaller border-radius */
+            margin-bottom: 1rem; /* Reduced margin-bottom */
+            font-weight: 700;
+            text-align: center;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08); /* Smaller shadow */
+            font-size: 1.25rem; /* Further reduced font size */
+            letter-spacing: 0.03em;
+        }
+        .scientific-info-section .subject-card, .scientific-info-section .assessment-section {
+            background-color: #ffffff;
+            border-radius: 0.8rem; /* Further reduced border-radius */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06); /* Softer, lighter shadow */
+            padding: 1.5rem; /* Further reduced padding */
+            margin-bottom: 1.5rem; /* Reduced margin-bottom */
+            transition: all 0.2s ease-in-out; /* Faster transition */
+            border: 1px solid #f0f0f0; /* Even lighter border */
+        }
+        .scientific-info-section .subject-card:hover, .scientific-info-section .assessment-section:hover {
+            transform: translateY(-4px) scale(1.002); /* Minimal hover effect */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle hover shadow */
+        }
+        .scientific-info-section .subject-title, .scientific-info-section .assessment-title {
+            font-size: 1.4rem; /* Further reduced font size */
+            font-weight: 700;
+            color: #212529; /* Darker text for titles */
+            margin-bottom: 0.8rem; /* Reduced margin-bottom */
+            border-bottom: 1px solid #f8f9fa; /* Very light border */
+            padding-bottom: 0.5rem; /* Reduced padding-bottom */
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .scientific-info-section .subject-title::after, .scientific-info-section .assessment-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -1px; /* Adjusted position */
+            width: 30px; /* Further reduced width */
+            height: 1px; /* Reduced height */
+            background-color: #1546a0; /* Matching gradient blue */
+        }
+        .scientific-info-section .subject-toggle-icon {
+            font-size: 1.1rem; /* Further reduced icon size */
+            transition: transform 0.2s ease-in-out;
+        }
+        .scientific-info-section .subject-content-wrapper {
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            overflow: hidden;
+            max-height: 1000px; /* Arbitrary large value for open state */
+            opacity: 1;
+        }
+        .scientific-info-section .subject-content-wrapper.content-hidden {
+            max-height: 0;
+            opacity: 0;
+        }
+
+        .scientific-info-section .teacher-item, .scientific-info-section .assessment-item {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 0.5rem; /* Further reduced margin-bottom */
+            padding: 0.4rem 0; /* Further reduced padding */
+            border-bottom: 1px solid #fcfcfc; /* Almost invisible border */
+        }
+        .scientific-info-section .teacher-item:last-child, .scientific-info-section .assessment-item:last-child {
+            border-bottom: none;
+        }
+        .scientific-info-section .teacher-name, .scientific-info-section .assessment-name {
+            font-weight: 600;
+            color: #555; /* Slightly lighter text */
+            flex-basis: 60%;
+            font-size: 0.95rem; /* Further reduced font size */
+        }
+        .scientific-info-section .course-info, .scientific-info-section .assessment-details {
+            color: #777; /* Lighter text */
+            font-size: 0.85rem; /* Further reduced font size */
+            flex-basis: 40%;
+            text-align: right;
+        }
+        /* Mobile-specific adjustments */
+        @media (max-width: 768px) {
+            .scientific-info-section .max-w-7xl {
+                padding: 1.5rem; /* Reduced inner padding for mobile container */
+            }
+            .scientific-info-section .header-title {
+                font-size: 1.8rem; /* Smaller header on mobile */
+                margin-bottom: 1.5rem; /* Adjusted margin */
+            }
+            .scientific-info-section .year-section-title {
+                font-size: 1.4rem; /* Smaller year title on mobile */
+                padding: 0.8rem; /* Reduced padding */
+                margin-top: 1.5rem;
+                margin-bottom: 1rem;
+            }
+            .scientific-info-section .section-title {
+                font-size: 1.1rem; /* Smaller section title on mobile */
+                padding: 0.6rem;
+                margin-bottom: 0.8rem;
+            }
+            .scientific-info-section .subject-card, .scientific-info-section .assessment-section {
+                padding: 1rem; /* Reduced card padding on mobile */
+                margin-bottom: 1rem;
+            }
+            .scientific-info-section .subject-title, .scientific-info-section .assessment-title {
+                font-size: 1.2rem; /* Smaller subject title on mobile */
+                margin-bottom: 0.6rem;
+                padding-bottom: 0.4rem;
+            }
+            .scientific-info-section .subject-title::after, .scientific-info-section .assessment-title::after {
+                width: 25px; /* Smaller underline on mobile */
+                height: 1px;
+            }
+            .scientific-info-section .subject-toggle-icon {
+                font-size: 1rem; /* Smaller icon on mobile */
+            }
+            .scientific-info-section .teacher-item, .scientific-info-section .assessment-item {
+                margin-bottom: 0.4rem; /* Reduced item spacing */
+                padding: 0.3rem 0;
+                flex-direction: column; /* Stack name and info vertically */
+                align-items: flex-start; /* Align text to the left */
+            }
+            .scientific-info-section .teacher-name, .scientific-info-section .assessment-name {
+                font-size: 0.9rem; /* Smaller name font */
+                flex-basis: 100%; /* Take full width */
+            }
+            .scientific-info-section .course-info, .scientific-info-section .assessment-details {
+                font-size: 0.8rem; /* Smaller info font */
+                flex-basis: 100%; /* Take full width */
+                text-align: left; /* Align info to the left */
+                margin-top: 0.1rem; /* Small top margin to separate from name */
+                margin-left: 0; /* Remove left margin */
+            }
+            .scientific-info-section .status-badge {
+                font-size: 0.65rem; /* Smaller badge font on mobile */
+                padding: 0.15rem 0.4rem; /* Smaller badge padding */
+                margin-left: 0; /* Remove margin, will be on new line */
+                margin-top: 0.2rem; /* Add a small top margin to separate from info */
+            }
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 0.2rem 0.5rem; /* Further reduced padding */
+            border-radius: 9999px;
+            font-size: 0.7rem; /* Further reduced font size */
+            font-weight: 600;
+            margin-left: 0.5rem; /* Reduced margin-left */
+        }
+        .status-completed {
+            background-color: #b8e2c0; /* Even softer green */
+            color: #164b22; /* Darker green text */
+        }
+        .status-in-progress {
+            background-color: #fffacd; /* Even softer yellow */
+            color: #7d5e03; /* Darker yellow text */
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg py-4 relative"> <!-- Stronger shadow, relative for mobile menu -->
+        <div class="container mx-auto flex justify-between items-center px-4 md:px-8">
+            <a href="#" class="text-3xl font-extrabold text-purple-700 rounded-lg">TÀI LIỆU THỦ KHOA</a> <!-- Stronger brand color -->
+            <div class="space-x-8 hidden md:flex"> <!-- More spacing -->
+                <a href="#hero" class="nav-link text-gray-700 hover:text-pink-500 font-medium transition-colors text-lg">Trang chủ</a>
+                <a href="#courses" class="nav-link text-gray-700 hover:text-pink-500 font-medium transition-colors text-lg">Khóa học</a>
+                <a href="#scientific-docs" class="nav-link text-gray-700 hover:text-pink-500 font-medium transition-colors text-lg">Tài liệu khoa học</a>
+                <a href="#why-us" class="nav-link text-gray-700 hover:text-pink-500 font-medium transition-colors text-lg">Về chúng tôi</a>
+                <a href="#contact" class="nav-link text-gray-700 hover:text-pink-500 font-medium transition-colors text-lg">Liên hệ</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-pink-500 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="#hero" class="nav-link">Trang chủ</a>
+            <a href="#courses" class="nav-link">Khóa học</a>
+            <a href="#scientific-docs" class="nav-link">Tài liệu khoa học</a>
+            <a href="#why-us" class="nav-link">Về chúng tôi</a>
+            <a href="#contact" class="nav-link">Liên hệ</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <!-- Decorative dots -->
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+
+        <div class="hero-content max-w-4xl mx-auto px-4">
+            <h1 class="text-6xl md:text-8xl font-extrabold mb-5 leading-tight">
+                Chinh Phục Mọi Kì Thi Cùng <span class="text-pink-100">TLTK</span>
+            </h1>
+            <p class="text-xl md:text-2xl font-light mb-10">
+                Nền tảng tài liệu của khóa học luyện thi hàng đầu, hỗ trợ bạn đạt điểm cao nhất một cách vui vẻ và hiệu quả!
+            </p>
+            <a href="#courses" class="btn-primary inline-block">Khám phá ngay các khóa học</a>
+        </div>
+    </section>
+
+    <main class="flex-grow container mx-auto p-4 md:p-8">
+        <section id="courses" class="text-center mb-20 pt-16"> <!-- Added padding top for scroll offset -->
+            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">CÁC COMBO TÀI LIỆU HOT NHẤT ✨</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Hãy chọn combo phù hợp với mục tiêu của bạn và bắt đầu hành trình chinh phục kỳ thi THPT Quốc Gia với những tài liệu và hướng dẫn chất lượng cao, được thiết kế đặc biệt cho bạn!
+            </p>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"> <!-- Increased gap -->
+
+            <!-- Card 3: 2K8 COMBO LUYỆN THI THPT QUỐC GIA 2026 -->
+            <div class="card p-8 flex flex-col items-center text-center">
+                <div class="text-7xl mb-4 text-green-500">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">2K8 COMBO LUYỆN THI THPT QUỐC GIA 2026</h3>
+                <p class="text-gray-600 mb-5 flex-grow">
+                    Bao gồm toàn bộ các tài liệu của toàn bộ các khóa hot hiện nay, giúp sĩ tử 2K5 ôn tập hiệu quả và đạt kết quả cao.
+                </p>
+                <a href="https://drive.google.com/drive/folders/1b6EdygGUOvr8x_zRJItSgn1IW7dGo4VF" target="_blank"><button class="btn-primary w-full" >ấn vào để xem 😍</button></a>
+                
+            </div>
+
+            <!-- Card 4: 2K7 COMBO LUYỆN THI THPT QUỐC GIA 2025 -->
+            <div class="card p-8 flex flex-col items-center text-center">
+                <div class="text-7xl mb-4 text-yellow-500">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">2K7 COMBO LUYỆN THI THPT QUỐC GIA 2025</h3>
+                <p class="text-gray-600 mb-5 flex-grow">
+                    Tài Liệu Ôn Thi Official. Hỗ trợ Zalo: 0333800642. Kế hoạch ôn thi chi tiết, bám sát chương trình và xu hướng đề thi, tối ưu hóa điểm số.
+                </p>
+                <a href="https://drive.google.com/drive/folders/1ShhMPTfDT4Tp0i8p_d70wvYu6wtmJ6fZ" target="_blank"><button class="btn-primary w-full" >ấn vào để xem 😍</button></a>
+            </div>
+
+            <!-- Card 5: COMBO LỚP 10 + LỚP 11 -->
+            <div class="card p-8 flex flex-col items-center text-center">
+                <div class="text-7xl mb-4 text-red-500">
+                    <i class="fas fa-atlas"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">COMBO LỚP 10 + LỚP 11</h3>
+                <p class="text-gray-600 mb-5 flex-grow">
+                    Tài Liệu Ôn Thi Official. Hỗ trợ Zalo: 0333800642. Nền tảng vững chắc cho các lớp dưới, giúp học sinh làm quen với kiến thức thi THPT từ sớm.
+                </p>
+                
+                  <a href="https://drive.google.com/drive/folders/1eltd2SBwU66ULihijrp43_9mxufFKnmZ" target="_blank"><button class="btn-primary w-full" >ấn vào để xem 😍</button></a>
+            </div>
+
+
+
+
+            
+            <div class="card p-8 flex flex-col items-center text-center">
+                <div class="text-7xl mb-4 text-purple-500"> <!-- Larger icon -->
+                    <i class="fas fa-gift"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">TẶNG 32 đề TSA ILP và nhiều tài liệu khác
+                </h3>
+                <p class="text-gray-600 mb-5 flex-grow">
+                    Bao gồm toàn bộ các tài liệu siu tầm, giúp sĩ tử ôn tập hiệu quả và đạt kết quả cao.
+                </p>
+                <a href="https://drive.google.com/drive/folders/1iJPHpD5hjQ4jX_LtAUN_LuLOapve2kX1?usp=sharing" target="_blank"><button class="btn-primary w-full" >ấn vào để xem 😍</button></a>
+            </div>
+
+            <!-- Card 2: 2K6 COMBO LUYỆN THI THPT QUỐC GIA 2024 -->
+            <!-- <div class="card p-8 flex flex-col items-center text-center">
+                <div class="text-7xl mb-4 text-blue-500">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">2K6 COMBO LUYỆN THI THPT QUỐC GIA 2024</h3>
+                <p class="text-gray-600 mb-5 flex-grow">
+                    Bao gồm toàn bộ các tài liệu của toàn bộ các khóa hot hiện nay, giúp sĩ tử 2K5 ôn tập hiệu quả và đạt kết quả cao.
+                </p>
+                <button class="btn-primary w-full" onclick="openLink('#scientific-docs')">ấn vào để xem 😍</button>
+            </div> -->
+            <!-- Card 6: 2K5 COMBO LUYỆN THI THPT QUỐC GIA 2023 (Link thứ 2) -->
+            <!-- <div class="card p-8 flex flex-col items-center text-center">
+                <div class="text-7xl mb-4 text-indigo-500">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">2K5 COMBO LUYỆN THI THPT QUỐC GIA 2023 (Phiên bản đặc biệt)</h3>
+                <p class="text-gray-600 mb-5 flex-grow">
+                    TàiLieuOnThiOfficial.Com. Tệp thuộc sở hữu của Đỗ Đạt. Nội dung cập nhật và nâng cao, tối ưu cho việc ôn tập cấp tốc và đạt kết quả đột phá.
+                </p>
+                <button class="btn-primary w-full" onclick="openLink('#')">ấn vào để xem 😍</button>
+            </div> -->
+
+            
+        </div>
+
+        <!-- Integrated Scientific Info Section -->
+        <section id="scientific-docs" class="scientific-info-section text-center mb-20 pt-16">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">TÀI LIỆU KHÓA HỌC ✨</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                Tổng hợp chi tiết các tài liệu luyện thi THPT theo từng năm, giúp bạn dễ dàng tra cứu thông tin hiệu quả.
+            </p>
+
+            <div class="max-w-7xl mx-auto bg-white rounded-2xl shadow-2xl p-10">
+                <h1 class="header-title text-center mb-10">
+                    Thông Tin Khoa Học - Combo XPS
+                </h1>
+
+                <!-- Section for 2008 -->
+                <div class="year-section-title" onclick="toggleYearContent(this)">
+                    <span>NĂM 2008</span>
+                    <span class="year-toggle-icon">+</span>
+                </div>
+                <div class="year-content-wrapper content-hidden">
+                    <!-- Môn Toán 2008 -->
+                    <div class="section-title">MÔN TOÁN 2008 - COMBO XPS</div>
+                    <div class="subject-card">
+                        <h2 class="subject-title" onclick="toggleSubjectContent(this)">
+                            <span>Môn Toán 2008</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Anh Shiper Toán</span>
+                                    <span class="course-info">Trùm 12A3 <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Nguyễn Phan Tiến</span>
+                                    <span class="course-info">Trọn bộ lộ trình ôn thi A - Z <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Nguyễn Quốc Chí</span>
+                                    <span class="course-info">Lớp 11; Chuyên đề lớp 12; Trọn bộ lộ trình A-Z <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TOÁN - TỔ TOÁN HỌC MAPSTUDY 2008</span>
+                                    <span class="course-info">Trọn bộ lộ trình ôn thi A - Z <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Nguyễn Đăng Ái (TDM)</span>
+                                    <span class="course-info">Trọn bộ lộ trình ôn thi A - Z <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Đỗ Văn Đức</span>
+                                    <span class="course-info">Trọn bộ lộ trình A-Z <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Hồ Thúc Thuận</span>
+                                    <span class="course-info">Trọn bộ S,C,T,G; Thực chiến phòng thi <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Nguyễn Tiến Đạt</span>
+                                    <span class="course-info">Chuyên đề, Luyện đề, Tổng ôn, Thực chiến phòng thi <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Cô Ngọc Huyền LB</span>
+                                    <span class="course-info">Trọn bộ lộ trình A - Z 2K8 <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Toán DPAD</span>
+                                    <span class="course-info">Luyện thi THPT Quốc Gia <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Nguyễn Công Chính</span>
+                                    <span class="course-info">Trọn bộ S1 S2 S3 (Lộ trình THE SUN) <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TOÁN ANH GIÁO KID 2008</span>
+                                    <span class="course-info"><span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">THẦY LƯU HUY THƯỞNG 2008</span>
+                                    <span class="course-info"><span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Môn Lý 2008 -->
+                    <div class="section-title">MÔN LÝ 2008 - COMBO XPS</div>
+                    <div class="subject-card">
+                        <h2 class="subject-title" onclick="toggleSubjectContent(this)">
+                            <span>Môn Lý 2008</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Vũ Tuấn Anh</span>
+                                    <span class="course-info">Trọn bộ S,C,T,G; Thực chiến phòng thi <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Vũ Ngọc Anh</span>
+                                    <span class="course-info">Trọn bộ IMO 2K8 <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LÝ THẦY ĐỖ NGỌC HÀ 2K8</span>
+                                    <span class="course-info"><span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Nguyễn Đăng Ái (TDM)</span>
+                                    <span class="course-info">Trọn bộ lộ trình ôn thi A - Z <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Vũ Hoàng Quân</span>
+                                    <span class="course-info">Trọn bộ A - Z <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Chu Văn Biên</span>
+                                    <span class="course-info">Trọn bộ A - Z <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LÝ DPAD - TRỊNH ĐÌNH THÀNH 2K8</span>
+                                    <span class="course-info"><span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Lý Thầy Vinh, Thầy Toàn</span>
+                                    <span class="course-info">Trọn bộ S1 S2 S3 (Lộ trình THE SUN) <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Môn Tiếng Anh 2008 -->
+                    <div class="section-title">MÔN TIẾNG ANH 2008 - COMBO XPS</div>
+                    <div class="subject-card">
+                        <h2 class="subject-title" onclick="toggleSubjectContent(this)">
+                            <span>Môn Tiếng Anh 2008</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Cô Trang Anh</span>
+                                    <span class="course-info">Trọn bộ A - Z 2K8 <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Cô Vũ Mai Phương</span>
+                                    <span class="course-info">Trọn bộ PRO3M; PRO3MLUS; Vip 90 <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Cô Phạm Liêu</span>
+                                    <span class="course-info">Trọn bộ IMO <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">NỀN TẢNG TIẾNG ANH THẦY NGUYỄN TRUNG NGUYÊN</span>
+                                    <span class="course-info"><span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Môn Hóa Học 2008 -->
+                    <div class="section-title">MÔN HÓA HỌC 2008 - COMBO XPS</div>
+                    <div class="subject-card">
+                        <h2 class="subject-title" onclick="toggleSubjectContent(this)">
+                            <span>Môn Hóa Học 2008</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Nguyễn Anh Phong</span>
+                                    <span class="course-info">Trọn bộ lộ trình theo phác đồ NAP <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">HÓA THẦY VŨ KHẮC NGỌC, CÔ TỔNG THI SƠN 2008</span>
+                                    <span class="course-info"><span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Phạm Văn Thuận</span>
+                                    <span class="course-info">Trọn bộ S,C,T,G; Thực chiến phòng thi <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Phạm Văn Trọng</span>
+                                    <span class="course-info">Trọn bộ IMO <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Phạm Thắng</span>
+                                    <span class="course-info">Trọn bộ A - Z <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Cô Thân Thị Liên 2k8</span>
+                                    <span class="course-info"><span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Phạm Thanh Tùng</span>
+                                    <span class="course-info">Trọn bộ S1 S2 S3 (Lộ trình THE SUN) <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Môn Ngữ Văn 2008 -->
+                    <div class="section-title">MÔN NGỮ VĂN 2008 - COMBO XPS</div>
+                    <div class="subject-card">
+                        <h2 class="subject-title" onclick="toggleSubjectContent(this)">
+                            <span>Môn Ngữ Văn 2008</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thượng Thức Sách</span>
+                                    <span class="course-info">Chị Linh TTS - Trọn bộ A - Z 2K8 <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Phạm Minh Nhật</span>
+                                    <span class="course-info">Trọn bộ S,C,T,G; Thực chiến phòng thi <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">VĂN THẦY PHẠM HỮU CƯỜNG, CÔ VƯƠNG THUÝ HẰNG 2008</span>
+                                    <span class="course-info"><span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">VĂN CÔ TRẦN THUỲ DƯƠNG 2008</span>
+                                    <span class="course-info"><span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Cô Sương Mai</span>
+                                    <span class="course-info">Trọn bộ A - Z 2K8 <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Môn Sinh Học 2008 -->
+                    <div class="section-title">MÔN SINH HỌC 2008 - COMBO XPS</div>
+                    <div class="subject-card">
+                        <h2 class="subject-title" onclick="toggleSubjectContent(this)">
+                            <span>Môn Sinh Học 2008</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Trương Công Kiên</span>
+                                    <span class="course-info">Trọn bộ A - Z 2026 <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">SINH THẦY NGUYỄN ĐỨC HẢI - CÔ NGUYỄN THỊ KIM ANH 2008</span>
+                                    <span class="course-info"><span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Phan Khắc Nghệ</span>
+                                    <span class="course-info">Khóa LIVESTREAM 2026 <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Nguyễn Đức Hải</span>
+                                    <span class="course-info">Trọn bộ S1 S2 S3 (Lộ trình THE SUN) <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Môn Lịch Sử 2008 -->
+                    <div class="section-title">MÔN LỊCH SỬ 2008 - COMBO XPS</div>
+                    <div class="subject-card">
+                        <h2 class="subject-title" onclick="toggleSubjectContent(this)">
+                            <span>Môn Lịch Sử 2008</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CÔ NGUYỄN HƯƠNG SEN MCLASS 2K8</span>
+                                    <span class="course-info"><span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CÔ NGÔ THỊ LAN HƯƠNG ATSCHOOL 2K8</span>
+                                    <span class="course-info"><span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Môn Địa Lý 2008 -->
+                    <div class="section-title">MÔN ĐỊA LÝ 2008 - COMBO XPS</div>
+                    <div class="subject-card">
+                        <h2 class="subject-title" onclick="toggleSubjectContent(this)">
+                            <span>Môn Địa Lý 2008</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Đàm Thanh Tùng ATSCHOOL 2K8</span>
+                                    <span class="course-info"><span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">ĐỊA LÝ CÔ MAI ANH 2008</span>
+                                    <span class="course-info"><span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">ĐỊA LÝ THẦY TÀI 2008</span>
+                                    <span class="course-info"><span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Đánh giá năng lực 2008 -->
+                    <div class="section-title">ĐÁNH GIÁ NĂNG LỰC 2008</div>
+                    <div class="assessment-section">
+                        <h2 class="assessment-title" onclick="toggleSubjectContent(this)">
+                            <span>Đánh giá năng lực Hà Nội (HSA)</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">Đánh giá năng lực Hà Nội</span>
+                                    <span class="assessment-details">HOCMAI 2008 <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">Đánh giá năng lực Hà Nội</span>
+                                    <span class="assessment-details">VNES 2008 <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">Đánh giá năng lực Hà Nội</span>
+                                    <span class="assessment-details">MAPSTUDY 2008 <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">Đánh giá năng lực Hà Nội</span>
+                                    <span class="assessment-details">HSA EDU 2008 <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <h2 class="assessment-title mt-6" onclick="toggleSubjectContent(this)">
+                            <span>Đánh giá năng lực Hồ Chí Minh (APT)</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">Đánh giá năng lực Hồ Chí Minh</span>
+                                    <span class="assessment-details">HOCMAI 2008 <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">Đánh giá năng lực Hồ Chí Minh</span>
+                                    <span class="assessment-details">THẦY BÙI VĂN CÔNG 2008 <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">Đánh giá năng lực Hồ Chí Minh</span>
+                                    <span class="assessment-details">EMPIRE TEAM 2008 (KHOÁ 2) <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">Đánh giá năng lực Hồ Chí Minh</span>
+                                    <span class="assessment-details">MAPSTUDY 2008 <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <h2 class="assessment-title mt-6" onclick="toggleSubjectContent(this)">
+                            <span>Đánh giá tư duy</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">Đánh giá tư duy</span>
+                                    <span class="assessment-details">HOCMAI 2008 <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">Đánh giá tư duy</span>
+                                    <span class="assessment-details">ILP 2008 <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">Đánh giá tư duy</span>
+                                    <span class="assessment-details">HSA EDU 2008 <span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                                </li>
+                            </ul>
+                            <div class="assessment-item">
+                                <span class="assessment-name">LUYỆN THI ĐÁNH GIÁ NĂNG LỰC SƯ PHẠM 2008 HSA EDU</span>
+                                <span class="assessment-details"><span class="status-badge status-in-progress">Đang hoàn thiện</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section for 2007 -->
+                <div class="year-section-title" onclick="toggleYearContent(this)">
+                    <span>NĂM 2007</span>
+                    <span class="year-toggle-icon">+</span>
+                </div>
+                <div class="year-content-wrapper content-hidden">
+                    <!-- Môn Toán 2007 -->
+                    <div class="section-title">MÔN TOÁN 2007 - COMBO XPS</div>
+                    <div class="subject-card">
+                        <h2 class="subject-title" onclick="toggleSubjectContent(this)">
+                            <span>Môn Toán 2007</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Anh Shiper Toán</span>
+                                    <span class="course-info">Trùm 12A3 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Nguyễn Phan Tiến</span>
+                                    <span class="course-info">Trọn bộ lộ trình ôn thi A - Z <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Nguyễn Quốc Chí</span>
+                                    <span class="course-info">Lớp 11; Chuyên đề lớp 12; Trọn bộ lộ trình A-Z <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Nguyễn Đăng Ái (TDM)</span>
+                                    <span class="course-info">Trọn bộ lộ trình ôn thi A - Z <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Đặng Thành Nam (VTED)</span>
+                                    <span class="course-info">Trọn bộ lộ trình A - Z; Live X <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Đỗ Văn Đức</span>
+                                    <span class="course-info">Trọn bộ IMO <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Hồ Thúc Thuận</span>
+                                    <span class="course-info">Trọn bộ S,C,T,G; Thực chiến phòng thi <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Nguyễn Tiến Đạt</span>
+                                    <span class="course-info">Chuyên đề, Luyện đề, Tổng ôn, Thực chiến phòng thi <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Cô Ngọc Huyền LB</span>
+                                    <span class="course-info">Trọn bộ lộ trình A - Z 2K7 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TOÁN LIMC</span>
+                                    <span class="course-info">Luyện thi THPT Quốc Gia 2025 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Toán DPAD</span>
+                                    <span class="course-info">Luyện thi THPT Quốc Gia 2025 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Nguyễn Công Chính</span>
+                                    <span class="course-info">Trọn bộ S1 S2 S3 (Lộ trình THE SUN 2025) <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Môn Lý 2007 -->
+                    <div class="section-title">MÔN LÝ 2007 - COMBO XPS</div>
+                    <div class="subject-card">
+                        <h2 class="subject-title" onclick="toggleSubjectContent(this)">
+                            <span>Môn Lý 2007</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Vũ Tuấn Anh</span>
+                                    <span class="course-info">Trọn bộ S,C,T,G; Thực chiến phòng thi <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Vũ Ngọc Anh</span>
+                                    <span class="course-info">Trọn bộ IMO 2K7 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LÝ THẦY ĐỖ NGỌC HÀ 2K7</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Nguyễn Đăng Ái (TDM)</span>
+                                    <span class="course-info">TDPX2024 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Vũ Hoàng Quân</span>
+                                    <span class="course-info">Trọn bộ A - Z <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Chu Văn Biên</span>
+                                    <span class="course-info">Trọn bộ A - Z <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Bùi Xuân Đạt</span>
+                                    <span class="course-info">Trọn lộ trình <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LÝ DPAD - TRỊNH ĐÌNH THÀNH 2K7</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Lý Thầy Vinh, Thầy Toàn</span>
+                                    <span class="course-info">Trọn bộ S1 S2 S3 (Lộ trình THE SUN 2025) <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Môn Tiếng Anh 2007 -->
+                    <div class="section-title">MÔN TIẾNG ANH 2007 - COMBO XPS</div>
+                    <div class="subject-card">
+                        <h2 class="subject-title" onclick="toggleSubjectContent(this)">
+                            <span>Môn Tiếng Anh 2007</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Cô Trang Anh</span>
+                                    <span class="course-info">Trọn bộ A - Z 2K7 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Cô Vũ Mai Phương</span>
+                                    <span class="course-info">Trọn bộ PRO3M; PRO3MLUS; Vip 90 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Cô Phạm Liên</span>
+                                    <span class="course-info">Trọn bộ IMO <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Môn Hóa Học 2007 -->
+                    <div class="section-title">MÔN HÓA HỌC 2007 - COMBO XPS</div>
+                    <div class="subject-card">
+                        <h2 class="subject-title" onclick="toggleSubjectContent(this)">
+                            <span>Môn Hóa Học 2007</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Nguyễn Anh Phong</span>
+                                    <span class="course-info">Trọn bộ lộ trình theo phác đồ NAP <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Nguyễn Du</span>
+                                    <span class="course-info">Học Hóa Đến Chết <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Phạm Văn Trọng</span>
+                                    <span class="course-info">Trọn bộ IMO <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Phạm Thắng</span>
+                                    <span class="course-info">Trọn bộ A - Z <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Cô Thân Thị Liên 2k7</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Phạm Thanh Tùng</span>
+                                    <span class="course-info">Trọn bộ S1 S2 S3 (Lộ trình THE SUN 2025) <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">HÓA TEAM PHẾ XPS 2007</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Môn Ngữ Văn 2007 -->
+                    <div class="section-title">MÔN NGỮ VĂN 2007 - COMBO XPS</div>
+                    <div class="subject-card">
+                        <h2 class="subject-title" onclick="toggleSubjectContent(this)">
+                            <span>Môn Ngữ Văn 2007</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thượng Thức Sách</span>
+                                    <span class="course-info">Chị Linh TTS - Trọn bộ A - Z 2K7 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Phạm Minh Nhật</span>
+                                    <span class="course-info">Trọn bộ S,C,T,G; Thực chiến phòng thi <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Cô Sương Mai</span>
+                                    <span class="course-info">Trọn bộ A - Z 2K7 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Môn Sinh Học 2007 -->
+                    <div class="section-title">MÔN SINH HỌC 2007 - COMBO XPS</div>
+                    <div class="subject-card">
+                        <h2 class="subject-title" onclick="toggleSubjectContent(this)">
+                            <span>Môn Sinh Học 2007</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Trương Công Kiên</span>
+                                    <span class="course-info">Trọn bộ A - Z 2025 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Phan Khắc Nghệ</span>
+                                    <span class="course-info">Khóa LIVESTREAM 2025 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Nguyễn Đức Hải</span>
+                                    <span class="course-info">Trọn bộ S1 S2 S3 (Lộ trình THE SUN 2025) <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Môn Lịch Sử 2007 -->
+                    <div class="section-title">MÔN LỊCH SỬ 2007 - COMBO XPS</div>
+                    <div class="subject-card">
+                        <h2 class="subject-title" onclick="toggleSubjectContent(this)">
+                            <span>Môn Lịch Sử 2007</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CÔ NGUYỄN HƯƠNG SEN MCLASS 2K7</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Môn Địa Lý 2007 -->
+                    <div class="section-title">MÔN ĐỊA LÝ 2007 - COMBO XPS</div>
+                    <div class="subject-card">
+                        <h2 class="subject-title" onclick="toggleSubjectContent(this)">
+                            <span>Môn Địa Lý 2007</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CÔ NGÔ THỊ LAN HƯƠNG ATSCHOOL 2K7</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Đàm Thanh Tùng ATSCHOOL 2K7</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Đánh giá năng lực 2007 -->
+                    <div class="section-title">ĐÁNH GIÁ NĂNG LỰC 2007</div>
+                    <div class="assessment-section">
+                        <h2 class="assessment-title" onclick="toggleSubjectContent(this)">
+                            <span>Đánh giá năng lực Hà Nội (HSA)</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">EMPIRE TEAM</span>
+                                    <span class="assessment-details">KHÓA ĐGNL APT - HSA - ĐGTD TSA <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">LUYỆN THI ĐGNL HÀ NỘI (HSA) THẦY VĂN HOA 2025</span>
+                                    <span class="assessment-details">LỚP PT02 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="teacher-name">LUYỆN THI ĐGNL HÀ NỘI (HSA) THẦY VĂN HOA 2025</span>
+                                    <span class="course-info">LỚP PT03 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">LUYỆN THI ĐGNL HÀ NỘI (HSA) TUYENSINH247 2025</span>
+                                    <span class="assessment-details">THE SUN ĐGNL <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">LUYỆN THI ĐGNL HÀ NỘI (HSA) TUYENSINH247 2025</span>
+                                    <span class="assessment-details">LỘ TRÌNH 5V <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">LUYỆN THI ĐGNL HÀ NỘI (HSA) MAPSTUDY</span>
+                                    <span class="assessment-details"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">UP TẶNG LUYỆN ĐỀ HSA TUYENSINH247</span>
+                                    <span class="assessment-details">THAM KHẢO HỌC THÊM NHI <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <h2 class="assessment-title mt-6" onclick="toggleSubjectContent(this)">
+                            <span>Đánh giá năng lực Hồ Chí Minh (APT)</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">EMPIRE TEAM</span>
+                                    <span class="assessment-details">KHÓA ĐGNL APT - HSA - ĐGTD TSA <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">ÔN THI ĐGNL ĐHQC TP. HCM 2K7</span>
+                                    <span class="assessment-details">THẦY BÙI VĂN CÔNG <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">LUYỆN THI ĐÁNH GIÁ NĂNG LỰC HCM MAPSTUDY 2025</span>
+                                    <span class="assessment-details"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">UP TẶNG LUYỆN ĐỀ APT TUYENSINH247</span>
+                                    <span class="assessment-details">THAM KHẢO HỌC THÊM NHI <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <h2 class="assessment-title mt-6" onclick="toggleSubjectContent(this)">
+                            <span>Đánh giá tư duy</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">EMPIRE TEAM</span>
+                                    <span class="assessment-details">KHÓA ĐGNL APT - HSA - ĐGTD TSA <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">ĐÁNH GIÁ TƯ DUY ĐẠI HỌC BÁCH KHOA 2025</span>
+                                    <span class="assessment-details">THẦY VĂN HOA HUST <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">BMC</span>
+                                    <span class="assessment-details">LUYỆN THI ĐÁNH GIÁ TƯ DUY <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">HOCMAI</span>
+                                    <span class="assessment-details">LUYỆN THI ĐÁNH GIÁ TƯ DUY <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                            </ul>
+                            <div class="assessment-item">
+                                <span class="assessment-name">LUYỆN THI ĐÁNH GIÁ NĂNG LỰC SƯ PHẠM 2025 HSA EDU</span>
+                                <span class="assessment-details"><span class="status-badge status-completed">Đã xong</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section for 2006 -->
+                <div class="year-section-title" onclick="toggleYearContent(this)">
+                    <span>NĂM 2006</span>
+                    <span class="year-toggle-icon">+</span>
+                </div>
+                <div class="year-content-wrapper content-hidden">
+                    <!-- Môn Toán 2006 -->
+                    <div class="section-title">MÔN TOÁN 2006</div>
+                    <div class="subject-card">
+                        <h2 class="subject-title" onclick="toggleSubjectContent(this)">
+                            <span>Môn Toán 2006</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Toán DPAD</span>
+                                    <span class="course-info">Luyện thi THPT Quốc Gia 2024 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">NỀN TẢNG</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">DPAD TOÁN DIỆN</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TRỌNG TÂM VD - VDC</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">DPAD - KHOA LUYỆN ĐỀ</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">ĐỀ ĐGNL - ĐGTD</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ VỀ ĐÍCH 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">ZOOM VIP</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Nguyễn Phan Tiến</span>
+                                    <span class="course-info">Trọn bộ lộ trình ôn thi A - Z <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">COMBO ZPS - XPS TOÁN 12 - K2006</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ LUYỆN ĐỀ TOÁN THẦY NGUYỄN PHAN TIẾN K2006</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ TỔNG ÔN TOÁN THẦY NGUYỄN PHAN TIẾN K2006</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ VỀ ĐÍCH 25 NGÀY CUỐI TOÁN THẦY NGUYỄN PHAN TIẾN K2006</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Nguyễn Quốc Chí</span>
+                                    <span class="course-info">Lớp 11; Chuyên đề lớp 12; Trọn bộ lộ trình A.Z <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ HỌC LỚP 11 - 2006</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ CHUYÊN ĐỀ LỚP 12 - 2006</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ LUYỆN ĐỀ 2K6 - WEB</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TỔNG ÔN - NHẬN BIẾT THÔNG HIỂU</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TỔNG ÔN - ĐẢNG BÀI VẬN DỤNG, VẬN DỤNG CAO</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ LUYỆN ĐỀ ONLINE 2006 - Thầy Nguyễn Quốc Chí</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Nguyễn Đăng Ái (TDM)</span>
+                                    <span class="course-info">Trọn bộ lộ trình ôn thi A - Z <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TỔNG HỢP LIVE FACEBOOK</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TDM1H - CÔNG PHÁ HÀM SỐ 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TDM2H - CÔNG PHÁ HHKG 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TDM VIP01 - Chinh phục VDC Tinh hoa 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TDM3H - CÔNG PHÁ LOGARIT 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TDM T - Tinh hoa tổng ôn THPT2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TDM4H - CÔNG PHÁ TÍCH PHÂN</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TDM5H - CÔNG PHÁ OXYZ</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TDM6H - CÔNG PHÁ SỐ PHỨC</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">IM11F - CỘNG ĐOẠN TOÁN 11</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TDMQ - Tăng Cường ÔN HSG VÀ THPT 9.4+</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TDMZ2024 PLUS_ TINH HOA CÔNG PHÁ ĐỀ VÀ TỔNG ÔN</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Đặng Thành Nam (VTED)</span>
+                                    <span class="course-info">Trọn bộ lộ trình A - Z; Live X <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ PRO X LUYỆN THI THPT QUỐC GIA MÔN TOÁN 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ PRO XMAX CHINH PHỤC NHÓM CÂU HỎI VẬN DỤNG CAO 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ PRO XPLUS - LUYỆN ĐỀ THAM KHẢO THPT QUỐC GIA 2024 MÔN TOÁN</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ LIVE X TỔNG ÔN CÁC CHỦ ĐỀ TRỌNG ĐIỂM</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Đỗ Văn Đức</span>
+                                    <span class="course-info">Trọn bộ IMO <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ NỀN TẢNG TOÁN 2023</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ M TĂNG TỐC 2K6</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOA O THỰC CHIẾN LUYỆN ĐỀ 2K6</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOA E TỔNG ÔN TRỌNG ĐIỂM</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ 10 CÂU CUỐI</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ CẤP TỐC 15 NGÀY</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Hồ Thúc Thuận</span>
+                                    <span class="course-info">Trọn bộ S,C,T,G; Thực chiến phòng thi <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LIVE C - ĐẠI SỐ LỚP 12 (2006)</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LIVE C - HÌNH HỌC LỚP 12 (2006)</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TỔNG ÔN KIẾN THỨC</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHUYÊN ĐỀ HÌNH HỌC KHÔNG GIAN LỚP 12</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">BỘ TRỢ</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LIVE-T LUYỆN ĐỀ TOÁN 2006</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LIVE-G TỔNG ÔN TOÁN 2006</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">THỰC CHIẾN PHÒNG THI 42 NGÀY VỀ ĐÍCH 9+ TOÁN</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Nguyễn Tiến Đạt</span>
+                                    <span class="course-info">Chuyên đề, Luyện đề, Tổng ôn, Thực chiến phòng thi <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">[2006] KHOÁ CHUYÊN ĐỀ S1 TOÁN</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">[2006] KHOÁ TỔNG ÔN S2 TOÁN</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">[2006] KHOÁ LUYỆN ĐỀ S3 TOÁN</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Cô Ngọc Huyền LB</span>
+                                    <span class="course-info">Trọn bộ lộ trình A - Z 2K6 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOA TRÊN WEB - PHÁC ĐỒ TOÁN 12 SEASON 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LIVE PAGE - NẮM VỮNG NỀN TẢNG HÌNH HỌC 11</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">STEP 1 - THE TRUTH (NỀN TẢNG THCS & 11 CẦN THIẾT)</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">STEP 2 - START - UP (KIẾN THỨC NỀN TẢNG 12)</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">STEP 3 - EXPLORER (VẬN DỤNG TOÁN 12)</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">STEP 4 - BREAK THE LIMITS</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">STEP 5 - KNOCK OUT</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">50 NGÀY CẤP TỐC ĐỘT PHÁ ĐIỂM TOÁN 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">20 NGÀY 40 BUỔI HỌC CUỐI CÙNG!</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KILLING CAMP: ĐỀ DỰ ĐOÁN</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Lê Bá Phương</span>
+                                    <span class="course-info">Combo PEN 2023 - THAM KHẢO <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Lê Anh Tuấn</span>
+                                    <span class="course-info">Combo PEN 2023 - THAM KHẢO <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Nguyễn Thanh Tùng</span>
+                                    <span class="course-info">Combo PEN 2023 - THAM KHẢO <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Lê Quang Sinh</span>
+                                    <span class="course-info">Trọn bộ lộ trình ôn thi A - Z <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">PHẦN ĐẠI SỐ 2K6</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">PHẦN HÌNH HỌC 2K6</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHUYÊN ĐỀ VĐ VÀ VDC</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">ÔN THI GIỮA KÌ 1</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KIỂM TRA</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TỔNG ÔN 30 CHUYÊN ĐỀ TRỌNG TÂM</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TỔNG ÔN VÀ LUYỆN ĐỀ 2K6 + CẤP TỐC 25 NGÀY CUỐI</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ TỔNG ÔN 12 CÂU CUỐI</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ MẶT MÃ TƯ DUY 15 CÂU CUỐI</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TOÁN LIMC</span>
+                                    <span class="course-info">Luyện thi THPT Quốc Gia 2024 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">HÀM SỐ (CƠ BẢN)</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">HÀM SỐ (NÂNG CAO)</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">THỂ TÍCH KHỐI ĐA DIỆN</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">HÀM SỐ MŨ VÀ LOGARIT</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">SỐ PHỨC</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TRỤ - NÓN - CẦU</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">PHƯƠNG PHÁP TOÁN ĐỘ TRONG KHÔNG GIAN OXYZ</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TÍCH PHÂN VÀ ỨNG DỤNG</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Luyện Đề THPT QG, ĐGNL HN</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ HỌC VĐ-VDC LIMB 2023 - THAM KHẢO</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">UP TẶNG - ANH SHIPPER TOÁN</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Chuyên đề Skill</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Chuyên đề Trùm Logarit</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Trùm Hình</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Trùm Tích Phân</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Môn Lý 2006 -->
+                    <div class="section-title">MÔN LÝ 2006</div>
+                    <div class="subject-card">
+                        <h2 class="subject-title" onclick="toggleSubjectContent(this)">
+                            <span>Môn Lý 2006</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Vũ Tuấn Anh</span>
+                                    <span class="course-info">Trọn bộ S,C,T,G; Thực chiến phòng thi <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LIVE-S KHỞI ĐỘNG LÝ 2K6</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LIVE-C LUYỆN TOÁN ĐIỆN LÝ 2K6</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LIVE-T LUYỆN ĐỀ LÝ 2K6</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LIVE-G TỔNG ÔN LÝ 2K6</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">THỰC CHIẾN PHÒNG THI - 42 NGÀY VỀ ĐÍCH</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Vũ Hoàng Quân</span>
+                                    <span class="course-info">Trọn bộ A - Z <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ CHUYÊN ĐỀ 12 LÝ THẦY QUÂN</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ TỔNG ÔN LÝ 12</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ LUYỆN ĐỀ LÝ THẦY QUÂN</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Nguyễn Đăng Ái (TDM)</span>
+                                    <span class="course-info">TDPX2024 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHƯƠNG 1. ĐẠO ĐỘNG CƠ</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHƯƠNG 2. SÓNG CƠ</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHƯƠNG 3. CÔNG PHÁ ĐIỆN XOAY CHIỀU</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHƯƠNG 4. SÓNG ĐIỆN TỬ</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHƯƠNG 5. CÔNG PHÁ SÓNG ÁNH SÁNG</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHƯƠNG 6. LƯỢNG TỬ ÁNH SÁNG</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHƯƠNG 7. HẠT NHÂN VÀ PHÓNG XẠ</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KSCL VẬT LÍ TDM CHINH PHỤC KÌ THI THPT 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Vũ Ngọc Anh</span>
+                                    <span class="course-info">Trọn bộ IMO 2K6 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ LIVE I: CHƯƠNG TRÌNH CƠ BẢN CỦA VẬT LÝ 12</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ LIVE M: CHƯƠNG TRÌNH VẬN DỤNG VÀ VẬN DỤNG CAO</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ LIVE O: THỰC CHIẾN LUYỆN ĐỀ</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">EBOOK VÀ TÀI LIỆU VIP CÂY XUYÊN TẾT</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ LIVE E TỔNG ÔN TRỌNG ĐIỂM</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHINH PHỤC LÝ THUYẾT</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ Cấp Tốc 14 Ngày - HS 2k6 - Thầy VNA - Mapstudy</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LIVESTREAM 5H SÁNG (4 câu khó nhất đề + 10 câu khó nhất đề)</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Chu Văn Biên</span>
+                                    <span class="course-info">Trọn bộ A - Z <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ VẬT LÝ 12 CƠ BẢN THẦY CHU VĂN BIÊN (2024)</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ VẬT LÝ 12 NÂNG CAO THẦY CHU VĂN BIÊN (2024)</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ LUYỆN ĐỀ MINH HOẠ</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Bùi Xuân Đạt</span>
+                                    <span class="course-info">Trọn lộ trình <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CƠ BẢN</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">VẬN DỤNG CAO</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KIỂM TRA TUẦN</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LUYỆN ĐỀ</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Hà Đông</span>
+                                    <span class="course-info">Trọn bộ A - Z <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ HỌC VẬT LÝ 12 ĐẦY ĐỦ</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOA HỌC 12 BUỔI NĂM CHẮC 7.5+</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOA LUYỆN ĐỀ VÀ BÁCH KHOA TOÀN THƯ TÀI LIỆU</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ VẬT LÝ LỚP 11</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Nguyễn Thành Nam</span>
+                                    <span class="course-info">Combo PEN 2023 - THAM KHẢO <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Đỗ Ngọc Hà</span>
+                                    <span class="course-info">Combo PEN 2023 - THAM KHẢO <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Môn Tiếng Anh 2006 -->
+                    <div class="section-title">MÔN TIẾNG ANH 2006</div>
+                    <div class="subject-card">
+                        <h2 class="subject-title" onclick="toggleSubjectContent(this)">
+                            <span>Môn Tiếng Anh 2006</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Cô Trang Anh</span>
+                                    <span class="course-info">Trọn bộ A - Z 2K6 (COMBO 7) <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TƯ VỰNG ĐỀ NGỮ PHÁP 11 - 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TƯ VỰNG ĐỌC HIỂU 6 - 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TỔNG ÔN TƯ VỰNG NGỮ PHÁP 11 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LUYỆN GIẢI ĐỀ THI 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ CIPP 2023-2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Cô Trang Anh</span>
+                                    <span class="course-info">Trọn bộ A - Z 2K6 (COMBO 8) <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TỔNG ÔN TƯ VỰNG NGỮ PHÁP 10</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TƯ VỰNG ĐỌC HIỂU 6</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TIỀN GIẢI ĐỀ 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ CIPP 2023-2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Cô Vũ Mai Phương</span>
+                                    <span class="course-info">Trọn bộ PRO3M; Vip 90 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ NGỮ PHÁP TIẾNG ANH TRỌN ĐỜI (2024)</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHƯƠNG TRÌNH ANH VĂN 10 - 11 - 12 (CƠ BẢN VÀ MỞ RỘNG)</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">ÔN TẬP CƠ BẢN, TỔNG HỢP CÁC DẠNG CÂU HỎI TRỌNG ĐỀ THI (2024)</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LUYỆN GIẢI ĐỀ THI THPT 2024 (MỨC ĐỘ 8+)</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">VIP90: ÔN LÀ TRÚNG TỦ 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Cô Vũ Mai Phương</span>
+                                    <span class="course-info">Trọn bộ PRO3M PLUS; Vip 90 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">PLUS 1: LUYỆN TƯ VỰNG TÍCH CỰC (2023)</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">PLUS 2: LUYỆN ĐỌC ĐIỀN VÀ ĐỌC HIỂU CHUYÊN SÂU (2024)</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">PLUS 3: LUYỆN GIẢI ĐỀ THI THPT 2024 (MỨC ĐỘ 9+)</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LIVE STREAM PRO 3M & PRO 3M PLUS 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">NGÂN HÀNG ĐỀ THI TỐT NGHIỆP THPT 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">FLASHCARD ONLINE _ HỌC VÀ GHI NHỚ TỪ VỰNG HIỆU QUẢ NHẤT (2024)</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LUYỆN NGỮ ÂM - TRỌNG ÂM CÙNG THẦY JOE HALL</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Phạm Trọng Hiếu</span>
+                                    <span class="course-info">Pen C 2023 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Cô Hương Fiona</span>
+                                    <span class="course-info">Combo Pen 2023 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Cô Phạm Liêu 2K6</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ 1: LÀM CHỦ NGỮ PHÁP 2024 CÔ PHẠM LIÊU</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ 2: TỪ VỰNG ĐỌC HIỂU 2024 CÔ PHẠM LIÊU</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ 3: THỰC CHIẾN LUYỆN ĐỀ VÀ TỔNG ÔN 8+ 2024 CÔ PHẠM LIÊU</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ 14 NGÀY TỔNG ÔN VÀ LUYỆN ĐỀ CẤP TỐC</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Cô Phi Thị Bích Ngọc</span>
+                                    <span class="course-info">Trọn bộ C,T,G,... <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LIVE S - KHỞI ĐỘNG TIẾNG ANH 2K6</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LIVE C - NGỮ PHÁP TOÀN DIỆN + TỪ VỰNG 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHẮNG SPECIALIST + ĐỌC ĐIỀN ĐỌC HIỂU 9+</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LIVE T - LUYỆN ĐỀ TIẾNG ANH 2K6</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">THI MÔ PHỎNG</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LIVE M</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">HỌC TỪ VỰNG 05:05 SÁNG</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Anh Sơn 2k6</span>
+                                    <span class="course-info">Tiếng Anh CEMA <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Nguyễn Anh Phong</span>
+                                    <span class="course-info">Trọn bộ lộ trình theo phác đồ NAP <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">EBOOK PHÁC ĐỒ NAP 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">PHÁC ĐỒ ĐẶC BIỆT WEB NAP 2006</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LIVE PHÁC ĐỒ ĐẶC BIỆT 2024 [2K6-XPS-LỚP 12]</span>
+                                    <span class="course-info">TƯ DUY NỀN TẢNG <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LIVE NAP PRO 2K6 XPS</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHƯƠNG TRÌNH NẠP TRUYỀN NHÂN</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TƯ DUY THỰC CHIẾN TRONG GIẢI BÀI TẬP VẬN DỤNG CAO</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LÝ THUYẾT VẬN DỤNG CAO (ADMIN UP TẶNG)</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ VỀ ĐÍCH + CẤP TỐC 14 NGÀY</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Môn Hóa Học 2006 -->
+                    <div class="section-title">MÔN HÓA HỌC 2006</div>
+                    <div class="subject-card">
+                        <h2 class="subject-title" onclick="toggleSubjectContent(this)">
+                            <span>Môn Hóa Học 2006</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Phạm Văn Thuận</span>
+                                    <span class="course-info">Trọn bộ S,C,T,G; Thực chiến phòng thi <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LIVE-S KHỞI ĐỘNG HOÁ 2K6</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LIVE-C LUYỆN THI TOÀN DIỆN HOÁ 2K6</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOA LÝ THUYẾT</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOA IMO</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOA NÂNG CAO</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LIVE-T LUYỆN ĐỀ HOÁ 2K6</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LIVE-G TỔNG ÔN HOÁ 2K6</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">THỰC CHIẾN PHÒNG THI - 42 NGÀY VỀ ĐÍCH</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Phạm Văn Trọng</span>
+                                    <span class="course-info">Trọn bộ IMO <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">A. CÁC BÀI GIẢNG HỮU CƠ LỚP 11 (TẶNG)</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">PHẦN B-BÀI GIẢNG CỦA KHOA HỌC IMO 2024 - HOÁ 12</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">BÀI GIẢNG KHOA LUYỆN ĐỀ MÔN HOÁ HỌC 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Phạm Thắng</span>
+                                    <span class="course-info">Trọn bộ A - Z <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">XUẤT PHÁT SỚM</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHUYÊN ĐỀ 2K6 (LIVE T)</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">BÀI TẬP TỰ LUYỆN (LIVE T)</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">VẬN DỤNG CAO 9+ 2K6</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TỔNG ÔN VÀ LUYỆN ĐỀ 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">6 NGÀY CẤP TỐC - VỀ ĐÍCH 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CÁC KHOÁ HỌC BỔ TRỢ</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Nguyễn Ngọc Anh</span>
+                                    <span class="course-info">Combo PEN 2023 (THAM KHẢO) <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Vũ Khắc Ngọc</span>
+                                    <span class="course-info">Combo PEN 2023 (THAM KHẢO) <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Cô Thân Thị Liên 2k6</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ CHUYÊN ĐỀ HOÁ 12</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ CHUYÊN ĐỀ VDC</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">VỀ ĐÍCH</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TỔNG ÔN VỀ ĐÍCH</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TỔNG HỢP VIDEO GIẢI SÁCH 40 ĐỀ</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">BÀI TEST CHỐNG SAI NHẦM</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">10 NGÀY THẦN TỐC VỀ ĐÍCH</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Môn Văn 2006 -->
+                    <div class="section-title">MÔN VĂN 2006</div>
+                    <div class="subject-card">
+                        <h2 class="subject-title" onclick="toggleSubjectContent(this)">
+                            <span>Môn Văn 2006</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thượng Thức Sách</span>
+                                    <span class="course-info">Chị Linh TTS - Trọn bộ A - Z 2K6 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TỔNG HỢP PODCAST + BÀI VIẾT</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ CHUYÊN ĐỀ ĐẶC BIỆT 5 THÁNG 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TTS - LUYỆN VIẾT</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHUYÊN SÂU TỔNG ÔN VÀ LUYỆN ĐỀ 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ 31 NGÀY CẤP TỐC</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">AUDIO THƯỢNG THỨC SÁCH</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TÀI LIỆU</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Phạm Minh Nhật</span>
+                                    <span class="course-info">Trọn bộ S,C,T,G; Thực chiến phòng thi <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LIVE - S KHỞI ĐỘNG LUYỆN THI 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LIVE-C LUYỆN THI TOÀN DIỆN VĂN 2K6</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">DẠY LẠI TỪ ĐẦU</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LIVE-T LUYỆN ĐỀ VĂN 2K6</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Cô Trần Thùy Dương</span>
+                                    <span class="course-info">Trọn bộ A - Z 2k6 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ ĐỌC - HIỂU & NGHỊ LUẬN XÃ HỘI</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ HỌC PHÂN TÍCH - CHUYÊN SÂU TÁC PHẨM VĂN HỌC 12</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ HỌC LUYỆN ĐỀ TRỌNG TÂM 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Cô Sương Mai</span>
+                                    <span class="course-info">Trọn bộ A - Z 2K7 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">TỔNG HỢP ĐỀ LUYỆN HẰNG TUẦN</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHỮA ĐỀ LUYỆN TUẦN</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ HỌC TRÊN WEB QANDASTUDY</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ LIVESTREAM FACEBOOK</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ CẤP TỐC 3 THÁNG CUỐI</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CẤP TỐC 14 NGÀY</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Phạm Hữu Cường</span>
+                                    <span class="course-info">Combo PEN 2023 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Cô Trịnh Thu Tuyết</span>
+                                    <span class="course-info">Combo PEN 2023 (THAM KHẢO) <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Môn Sinh 2006 -->
+                    <div class="section-title">MÔN SINH 2006</div>
+                    <div class="subject-card">
+                        <h2 class="subject-title" onclick="toggleSubjectContent(this)">
+                            <span>Môn Sinh 2006</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Phan Khắc Nghệ</span>
+                                    <span class="course-info">PRO S.A.T Moon 2024 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHỦ ĐỀ 1 - CƠ CHẾ DI TRUYỀN, BIẾN DỊ</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHỦ ĐỀ 2 - QUY LUẬT DI TRUYỀN</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHỦ ĐỀ 3 - DI TRUYỀN QUẦN THỂ</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHỦ ĐỀ 4 - ỨNG DỤNG DI TRUYỀN VÀO CHỌN GIỐNG</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHỦ ĐỀ 5 - DI TRUYỀN NGƯỜI</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHỦ ĐỀ 6 - TIẾN HÓA</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHỦ ĐỀ 7 - SINH THÁI</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Phan Khắc Nghệ</span>
+                                    <span class="course-info">Khóa LIVESTREAM 2024 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHỦ ĐỀ 1: CƠ CHẾ DI TRUYỀN VÀ BIẾN DỊ</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHỦ ĐỀ 2: TÍNH QUY LUẬT CỦA HIỆN TƯỢNG DI TRUYỀN</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHỦ ĐỀ 3: PHÂN DI TRUYỀN QUẦN THỂ, CHỌN GIỐNG, DI TRUYỀN NGƯỜI</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHỦ ĐỀ 4: PHÂN TIẾN HÓA</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CHỦ ĐỀ 5: PHÂN SINH THÁI</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ VỀ ĐÍCH THẦY PHAN KHẮC NGHỆ (NEW)</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Trương Công Kiên</span>
+                                    <span class="course-info">Trọn bộ A - Z 2024 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ CHUYÊN ĐỀ 2006</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ DẠY LẠI TỪ ĐẦU 2006</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">DẠY LẠI TỪ ĐẦU 2 (LÝ THUYẾT)</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">KHOÁ VDC</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">THI THỬ</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">LUYỆN ĐỀ</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">THỰC CHIẾN VỀ ĐÍCH 2024</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">PHÁC ĐỒ SINH WEB - 2006 (2023 - 2024)</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Đinh Đức Hiền</span>
+                                    <span class="course-info">Combo PEN 2023 (THAM KHẢO) <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">Thầy Nguyễn Thành Công</span>
+                                    <span class="course-info">Combo PEN 2023 (THAM KHẢO) <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- ĐGNL 2006 -->
+                    <div class="section-title">ĐGNL 2006</div>
+                    <div class="assessment-section">
+                        <h2 class="assessment-title" onclick="toggleSubjectContent(this)">
+                            <span>Luyện thi Đánh giá năng lực ĐHQG TP.HCM</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">EMPIRE TEAM 2K6</span>
+                                    <span class="assessment-details">TAQ <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">Luyện thi Đánh giá năng lực ĐHQG TP.HCM</span>
+                                    <span class="assessment-details">Thầy Bùi Văn Công <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <h2 class="assessment-title mt-6" onclick="toggleSubjectContent(this)">
+                            <span>Luyện thi ĐGTD ĐH BÁCH KHOA HÀ NỘI HOCMAI 2K6</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">HSA</span>
+                                    <span class="assessment-details">LUYỆN THI ĐÁNH GIÁ NĂNG LỰC ĐHQG HÀ NỘI <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">HUST</span>
+                                    <span class="assessment-details">LUYỆN THI ĐÁNH GIÁ TƯ DUY ĐH BÁCH KHOA HN <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">PAT VIDEO LUYỆN THI ĐGNL ĐHQG HÀ NỘI (HSA) HOCMAI 2K6</span>
+                                    <span class="assessment-details"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">PAT VIDEO LUYỆN THI ĐGNL ĐHQG TP. HCM (VNUHCM)</span>
+                                    <span class="assessment-details">HOCMAI 2K6 <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">KHOÁ LUYỆN THI ĐGNL MAPSTUDY</span>
+                                    <span class="assessment-details"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">THẦY VĂN HOA HSA</span>
+                                    <span class="assessment-details">LUYỆN THI ĐÁNH GIÁ NĂNG LỰC ĐHQG HÀ NỘI <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">THẦY VĂN HOA HUST</span>
+                                    <span class="assessment-details">LUYỆN THI ĐÁNH GIÁ TƯ DUY ĐH BÁCH KHOA HN <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">LIMC</span>
+                                    <span class="assessment-details">Luyện đề ĐGTD Bách Khoa Hà Nội (Khóa 2K6) <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="assessment-item">
+                                    <span class="assessment-name">DPAD</span>
+                                    <span class="assessment-details">ĐỀ ĐGNL & ĐGTD <span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- KHXH 2006 -->
+                    <div class="section-title">KHXH 2006</div>
+                    <div class="subject-card">
+                        <h2 class="subject-title" onclick="toggleSubjectContent(this)">
+                            <span>Môn Lịch Sử 2006</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CÔ NGUYỄN HƯƠNG SEN MCLASS 2K6</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">CÔ NGÔ THỊ LAN HƯƠNG ATSCHOOL 2K6</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <h2 class="subject-title mt-6" onclick="toggleSubjectContent(this)">
+                            <span>Môn Địa Lý 2006</span>
+                            <span class="subject-toggle-icon">+</span>
+                        </h2>
+                        <div class="subject-content-wrapper content-hidden">
+                            <ul>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">THẦY ĐÀM THANH TÙNG ATSCHOOL 2K6</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                                <li class="teacher-item">
+                                    <span class="teacher-name">THẦY ĐỊA TÀI QANDA 2K6</span>
+                                    <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                                </li>
+                            </ul>
+                            <div class="teacher-item">
+                                <span class="teacher-name">LUYỆN THI TỐT NGHIỆP THPT TỔ HỌC KHOA HỌC XÃ HỘI (PEN-C)</span>
+                                <span class="course-info"><span class="status-badge status-completed">Đã xong</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="text-center mt-20 mb-20 bg-white p-12 rounded-3xl shadow-2xl pt-16"> <!-- More padding and shadow, added padding top -->
+        <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-10">Tại Sao Chọn TLTK? ✨</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10"> <!-- Increased gap -->
+            <div class="flex flex-col items-center">
+                <i class="feature-icon fas fa-check-circle"></i>
+                <h3 class="text-2xl font-semibold text-gray-900 mb-3">Chất Lượng Đảm Bảo</h3>
+                <p class="text-gray-600 text-lg">Tài liệu được biên soạn bởi đội ngũ chuyên gia, bám sát chương trình và xu hướng đề thi mới nhất, giúp bạn tự tin ôn luyện.</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <i class="feature-icon fas fa-users"></i>
+                <h3 class="text-2xl font-semibold text-gray-900 mb-3">Cộng Đồng Hỗ Trợ</h3>
+                <p class="text-gray-600 text-lg">Tham gia các nhóm học tập sôi nổi, nhận được sự hỗ trợ tận tình từ các chị các anh và bạn bè, cùng nhau tiến bộ.</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <i class="feature-icon fas fa-mobile-alt"></i>
+                <h3 class="text-2xl font-semibold text-gray-900 mb-3">Truy Cập Mọi Lúc, Mọi Nơi</h3>
+                <p class="text-gray-600 text-lg">Học tập linh hoạt trên mọi thiết bị, cập nhập nhanh, sát và dowload được các tài liệu giúp bạn chủ động thời gian ôn luyện và không bỏ lỡ bất kỳ kiến thức quan trọng nào.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-purple-800 text-white p-12 text-center mt-10 rounded-t-3xl pt-16"> <!-- New footer color, added padding top -->
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10"> <!-- Increased gap -->
+                <div>
+                    <h4 class="text-2xl font-bold mb-5">Về TÀI LIỆU THỦ KHOA</h4>
+                    <p class="text-purple-200">Chúng tôi cam kết mang đến những tài liệu của những khóa học luyện thi THPT Quốc Gia chất lượng nhất, đồng hành cùng bạn trên con đường thành công.</p>
+                </div>
+                <div>
+                    <h4 class="text-2xl font-bold mb-5">Liên Kết Nhanh</h4>
+                    <ul class="space-y-3"> <!-- More spacing -->
+                        <li><a href="#hero" class="nav-link text-purple-200 hover:text-purple-50 transition-colors text-lg">Trang chủ</a></li>
+                        <li><a href="#courses" class="nav-link text-purple-200 hover:text-purple-50 transition-colors text-lg">Khóa học</a></li>
+                        <li><a href="#scientific-docs" class="nav-link text-purple-200 hover:text-purple-50 transition-colors text-lg">Tài liệu khoa học</a></li>
+                        <li><a href="#why-us" class="nav-link text-purple-200 hover:text-purple-50 transition-colors text-lg">Về chúng tôi</a></li>
+                        <!-- <li><a href="#" class="text-purple-200 hover:text-purple-50 transition-colors text-lg">Chính sách bảo mật</a></li> -->
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-2xl font-bold mb-5">Liên Hệ</h4>
+                    <p class="text-purple-200 mb-3">Email: <a href="mailto:emy774960@gmail.com" class="zalo-link text-purple-200 hover:text-purple-50">emy774960@gmail.com</a></p>
+                    <p class="text-purple-200 mb-5">Zalo Hỗ Trợ: <a href="https://zalo.me/0333800642" target="_blank" class="zalo-link text-purple-200 hover:text-purple-50">0333800642</a></p>
+                    <div class="flex justify-center space-x-6"> <!-- More spacing -->
+                        <a href="http://ffacebook.com/profile.php?id=61578034162454" class="text-purple-200 hover:text-purple-50 text-3xl transition-colors"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/vu.ngoc.minh.884917" class="text-purple-200 hover:text-purple-50 text-3xl transition-colors"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61577761082994" class="text-purple-200 hover:text-purple-50 text-3xl transition-colors"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="text-sm text-purple-300 mt-10">&copy; 2025 Tài Liệu Thủ Khoa. Bảo lưu mọi quyền.</p>
+        </div>
+    </footer>
+
+    <script>
+        /**
+         * Function to open a given URL in a new tab.
+         * @param {string} url - The URL to open.
+         */
+        function openLink(url) {
+            // In a real application, you would replace '#' with actual login/course URLs.
+            // For now, it opens a blank tab.
+            window.open(url, '_blank');
+        }
+
+        // Get references to the mobile menu button and the mobile menu
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        // Toggle mobile menu visibility on button click
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when a nav link is clicked (for smooth scrolling)
+        navLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                // Check if the link is an internal anchor link
+                if (link.getAttribute('href').startsWith('#')) {
+                    event.preventDefault(); // Prevent default jump
+                    const targetId = link.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        // Scroll smoothly to the target element
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80, // Adjust for fixed header if any
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+                // Close mobile menu if it's open
+                if (mobileMenu.classList.contains('active')) {
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // Close mobile menu if clicked outside (optional, but good for UX)
+        document.addEventListener('click', (event) => {
+            if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target) && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // JavaScript function to toggle content visibility for year sections
+        function toggleYearContent(element) {
+            const content = element.nextElementSibling;
+            const icon = element.querySelector('.year-toggle-icon');
+
+            if (content.classList.contains('content-hidden')) {
+                content.classList.remove('content-hidden');
+                icon.textContent = '-';
+            } else {
+                content.classList.add('content-hidden');
+                icon.textContent = '+';
+            }
+        }
+
+        // JavaScript function to toggle content visibility for subject/assessment sections
+        function toggleSubjectContent(element) {
+            const content = element.nextElementSibling;
+            const icon = element.querySelector('.subject-toggle-icon');
+
+            if (content.classList.contains('content-hidden')) {
+                content.classList.remove('content-hidden');
+                icon.textContent = '-';
+            } else {
+                content.classList.add('content-hidden');
+                icon.textContent = '+';
+            }
+        }
+
+        // Collapse all year and subject/assessment sections by default when the page loads
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Collapse year sections
+            const yearContentWrappers = document.querySelectorAll('.scientific-info-section .year-content-wrapper');
+            yearContentWrappers.forEach(wrapper => {
+                wrapper.classList.add('content-hidden');
+                const titleElement = wrapper.previousElementSibling;
+                if (titleElement && titleElement.classList.contains('year-section-title')) {
+                    const icon = titleElement.querySelector('.year-toggle-icon');
+                    if (icon) {
+                        icon.textContent = '+';
+                    }
+                }
+            });
+
+            // Collapse subject/assessment sections
+            const subjectContentWrappers = document.querySelectorAll('.scientific-info-section .subject-content-wrapper');
+            subjectContentWrappers.forEach(wrapper => {
+                wrapper.classList.add('content-hidden');
+                const titleElement = wrapper.previousElementSibling;
+                if (titleElement && (titleElement.classList.contains('subject-title') || titleElement.classList.contains('assessment-title'))) {
+                    const icon = titleElement.querySelector('.subject-toggle-icon');
+                    if (icon) {
+                        icon.textContent = '+';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
